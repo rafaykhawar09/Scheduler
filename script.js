@@ -30,5 +30,5 @@ for (let i = 0; i < time.length; i++) {
 
 
 const m = moment();
-console.log("Date: " + m.format("dddd MMM Mo YYYY"));
-console.log("Time: " + m.format("LT"));
+$("#currentDay").text((m.format("dddd MMM Mo YYYY")));
+console.log("Time: " + m.format("h A"));
