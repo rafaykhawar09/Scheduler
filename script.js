@@ -1,36 +1,34 @@
 
-// var timeArr[]
-//create a for loop that will generate the rows, text area and buttons
+var time = ["9 AM", "10 AM", "11 AM", "12 AM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
 
 //create elements    
-var row = $("<div>");
-var textarea = $("<textarea>");
-var timeblock = $("<div>");
-var saveBtn = $("<button>");
-var hour = $("<div>");
-var description = $("<div>");
+for (let i = 0; i < time.length; i++) {
+          
+	var row = $("<div>");
+	var textarea = $("<textarea>");
+	var timeblock = $("<div>");
+	var saveBtn = $("<button>");
+	var hour = $("<div>");
+	var description = $("<div>");
 
-$(".container").append(row);
-row.attr("class", "row");
+	$(".container").append(row);
+	row.attr("class", "row");
 
-row.append(timeblock);
-timeblock.attr("class", "timeblock");
+	row.append(timeblock);
+	timeblock.attr("class", "timeblock");
+	timeblock.append(hour);
+	hour.attr("class", "hour description");
+	hour.text(time[i]);
 
-// //append element from parent element
-// $(".container").append(row);
-// row.append(hour);
-// row.append(description);
-// row.append(saveBtn);
-// description.append(textarea);
-// hour.append(timeblock);
+	row.append(textarea);
 
-// //add text to button
-// saveBtn.text("Save Button");
+	row.append(saveBtn);
+	saveBtn.attr("class", "saveBtn");
+	saveBtn.text("Save!");
+}
 
-// //set class attributes
-// saveBtn.attr("class", "saveBtn");
-// row.attr("class","row");
-// hour.attr("class","hour");
-// hour.text("9am")
-// timeblock.attr("class", "time-block");
-// description.attr("class", "description");
+
+
+const m = moment();
+console.log("Date: " + m.format("dddd MMM Mo YYYY"));
+console.log("Time: " + m.format("LT"));
