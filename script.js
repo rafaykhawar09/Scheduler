@@ -1,15 +1,15 @@
 
 var time = ["9 AM", "10 AM", "11 AM", "12 AM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
 
+//
 var numTime = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-
+ 
 const m = moment();
-$("#currentDay").text((m.format("dddd MMM Mo YYYY")));
+$("#currentDay").text((m.format("LLLL")));
 var currentTime = parseInt(m.format("HH"));
-
-//create elements    
+   
 for (let i = 0; i < time.length; i++) {
-          
+	
 	var row = $("<div>");
 	var textarea = $("<textarea>");
 	var timeblock = $("<div>");
@@ -27,6 +27,10 @@ for (let i = 0; i < time.length; i++) {
 	hour.text(time[i]);
 
 	row.append(textarea);
+
+	if((localStorage.getItem(time[i]))){
+		textarea.text(localStorage.getItem(time[i]));
+	}
 
 	row.append(saveBtn);
 	saveBtn.attr("class", "saveBtn");
