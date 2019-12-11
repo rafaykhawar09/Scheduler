@@ -41,4 +41,17 @@ for (let i = 0; i < time.length; i++) {
 	else if(numTime[i] > currentTime){
 		textarea.attr("class", "future");
 	}
+
+	$(saveBtn).click(function(){
+		
+		if(($(this).parent().children("textarea").val()).length > 0){
+			
+			// alert("awesome");
+			console.log("clicked save");
+			// console.log();
+			localStorage.setItem(($(this).parent().children(".time-block").children(".hour").text()), ($(this).parent().children("textarea").val()));
+		}
+		
+	});
 }
+
